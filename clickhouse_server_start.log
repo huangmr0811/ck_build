@@ -1,0 +1,142 @@
+[root@centos230 config]# /opt/clickhouse/bin/clickhouse-server --config-file=/opt/clickhouse/config/config.xml
+Processing configuration file '/opt/clickhouse/config/config.xml'.
+Logging trace to /var/log/clickhouse-server/clickhouse-server.log
+Logging errors to /var/log/clickhouse-server/clickhouse-server.err.log
+Logging trace to console
+2021.06.19 23:16:03.204144 [ 24531 ] {} <Trace> Pipe: Pipe capacity is 1.00 MiB
+2021.06.19 23:16:03.333151 [ 24531 ] {} <Information> : Starting ClickHouse 21.3.12.1 with revision 54448, build id: 53D1CF9A5C450F761753D9903CB6DC16E1F08D32, PID 24531
+2021.06.19 23:16:03.333488 [ 24531 ] {} <Information> Application: starting up
+2021.06.19 23:16:03.340857 [ 24531 ] {} <Warning> Application: Calculated checksum of the binary: F2998244624BDE65375BBC4AB67C5A87. There is no information about the reference checksum.
+2021.06.19 23:16:03.342012 [ 24531 ] {} <Trace> Application: Will do mlock to prevent executable memory from being paged out. It may take a few seconds.
+2021.06.19 23:16:03.342108 [ 24531 ] {} <Trace> Application: The memory map of clickhouse executable has been mlock'ed, total 768.00 KiB
+2021.06.19 23:16:03.342289 [ 24531 ] {} <Information> StatusFile: Status file /var/lib/clickhouse/status already exists - unclean restart. Contents:
+PID: 24381
+Started at: 2021-06-19 23:14:02
+Revision: 54448
+
+2021.06.19 23:16:03.342538 [ 24531 ] {} <Debug> Application: Set max number of file descriptors to 4096 (was 1024).
+2021.06.19 23:16:03.342586 [ 24531 ] {} <Debug> Application: Initializing DateLUT.
+2021.06.19 23:16:03.342631 [ 24531 ] {} <Trace> Application: Initialized DateLUT with time zone 'Asia/Shanghai'.
+2021.06.19 23:16:03.342705 [ 24531 ] {} <Debug> Application: Setting up /var/lib/clickhouse/tmp/ to store temporary data in it
+2021.06.19 23:16:03.346447 [ 24531 ] {} <Debug> Application: Configuration parameter 'interserver_http_host' doesn't exist or exists and empty. Will use 'centos230' as replica host.
+2021.06.19 23:16:03.346839 [ 24531 ] {} <Information> SensitiveDataMaskerConfigRead: 1 query masking rules loaded.
+2021.06.19 23:16:03.347867 [ 24531 ] {} <Debug> ConfigReloader: Loading config '/opt/clickhouse/config/config.xml'
+Processing configuration file '/opt/clickhouse/config/config.xml'.
+Saved preprocessed configuration to '/var/lib/clickhouse/preprocessed_configs/config.xml'.
+2021.06.19 23:16:03.352167 [ 24531 ] {} <Debug> ConfigReloader: Loaded config '/opt/clickhouse/config/config.xml', performing update on configuration
+2021.06.19 23:16:03.353459 [ 24531 ] {} <Information> Application: Setting max_server_memory_usage was set to 28.27 GiB (31.42 GiB available * 0.90 max_server_memory_usage_to_ram_ratio)
+2021.06.19 23:16:03.355249 [ 24531 ] {} <Debug> ConfigReloader: Loaded config '/opt/clickhouse/config/config.xml', performed update on configuration
+2021.06.19 23:16:03.356467 [ 24531 ] {} <Debug> ConfigReloader: Loading config '/opt/clickhouse/config/users.xml'
+Processing configuration file '/opt/clickhouse/config/users.xml'.
+Saved preprocessed configuration to '/var/lib/clickhouse/preprocessed_configs/users.xml'.
+2021.06.19 23:16:03.357288 [ 24531 ] {} <Debug> ConfigReloader: Loaded config '/opt/clickhouse/config/users.xml', performing update on configuration
+2021.06.19 23:16:03.358491 [ 24531 ] {} <Debug> ConfigReloader: Loaded config '/opt/clickhouse/config/users.xml', performed update on configuration
+2021.06.19 23:16:03.359060 [ 24531 ] {} <Debug> Access(user directories): Added users.xml access storage 'users.xml', path: /opt/clickhouse/config/users.xml
+2021.06.19 23:16:03.359286 [ 24531 ] {} <Debug> Access(user directories): Added local directory access storage 'local directory', path: /var/lib/clickhouse/access/
+2021.06.19 23:16:03.360580 [ 24531 ] {} <Information> Application: Loading metadata from /var/lib/clickhouse/
+2021.06.19 23:16:03.368282 [ 24531 ] {} <Information> DatabaseAtomic (system): Total 6 tables and 0 dictionaries.
+2021.06.19 23:16:03.378629 [ 24542 ] {} <Debug> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Loading data parts
+2021.06.19 23:16:03.378669 [ 24540 ] {} <Debug> system.crash_log (30e5a262-8c37-4c6e-851d-dbd296155172): Loading data parts
+2021.06.19 23:16:03.378948 [ 24539 ] {} <Debug> system.query_log (a9f19200-2221-4b4a-a7c8-887ca05945da): Loading data parts
+2021.06.19 23:16:03.379009 [ 24543 ] {} <Debug> system.trace_log (ddcd3e26-fda8-48c8-b752-31459b818be4): Loading data parts
+2021.06.19 23:16:03.379085 [ 24538 ] {} <Debug> system.query_thread_log (870af0ee-bdc5-4f62-9751-af3694124fb8): Loading data parts
+2021.06.19 23:16:03.379129 [ 24541 ] {} <Debug> system.asynchronous_metric_log (15f78e96-f696-4bae-8c86-21b420d2b940): Loading data parts
+2021.06.19 23:16:03.383043 [ 24538 ] {} <Debug> system.query_thread_log (870af0ee-bdc5-4f62-9751-af3694124fb8): Loaded data parts (1 items)
+2021.06.19 23:16:03.383144 [ 24541 ] {} <Debug> system.asynchronous_metric_log (15f78e96-f696-4bae-8c86-21b420d2b940): Loaded data parts (2 items)
+2021.06.19 23:16:03.383415 [ 24540 ] {} <Debug> system.crash_log (30e5a262-8c37-4c6e-851d-dbd296155172): Loaded data parts (1 items)
+2021.06.19 23:16:03.387267 [ 24539 ] {} <Debug> system.query_log (a9f19200-2221-4b4a-a7c8-887ca05945da): Loaded data parts (1 items)
+2021.06.19 23:16:03.387767 [ 24543 ] {} <Debug> system.trace_log (ddcd3e26-fda8-48c8-b752-31459b818be4): Loaded data parts (6 items)
+2021.06.19 23:16:03.388014 [ 24542 ] {} <Debug> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Loaded data parts (9 items)
+2021.06.19 23:16:03.388672 [ 24531 ] {} <Information> DatabaseAtomic (system): Starting up tables.
+2021.06.19 23:16:03.388813 [ 24540 ] {} <Trace> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Found 3 old parts to remove.
+2021.06.19 23:16:03.388830 [ 24542 ] {} <Trace> system.trace_log (ddcd3e26-fda8-48c8-b752-31459b818be4): Found 3 old parts to remove.
+2021.06.19 23:16:03.388938 [ 24540 ] {} <Debug> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Removing part from filesystem 202106_1_6_1
+2021.06.19 23:16:03.388991 [ 24542 ] {} <Debug> system.trace_log (ddcd3e26-fda8-48c8-b752-31459b818be4): Removing part from filesystem 202106_1_1_0
+2021.06.19 23:16:03.388991 [ 24539 ] {} <Information> BackgroundSchedulePool/BgSchPool: Create BackgroundSchedulePool with 16 threads
+2021.06.19 23:16:03.389813 [ 24542 ] {} <Debug> system.trace_log (ddcd3e26-fda8-48c8-b752-31459b818be4): Removing part from filesystem 202106_2_2_0
+2021.06.19 23:16:03.390171 [ 24540 ] {} <Debug> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Removing part from filesystem 202106_7_7_0
+2021.06.19 23:16:03.390448 [ 24542 ] {} <Debug> system.trace_log (ddcd3e26-fda8-48c8-b752-31459b818be4): Removing part from filesystem 202106_3_3_0
+2021.06.19 23:16:03.391055 [ 24540 ] {} <Debug> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Removing part from filesystem 202106_8_8_0
+2021.06.19 23:16:03.392301 [ 24540 ] {} <Warning> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Removing temporary directory /var/lib/clickhouse/store/c63/c635b17e-f194-4f2f-a8ae-b64a25941390/tmp_merge_202106_1_13_3/
+2021.06.19 23:16:03.392909 [ 24571 ] {} <Debug> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390) (MergerMutator): Selected 6 parts from 202106_1_8_2 to 202106_13_13_0
+2021.06.19 23:16:03.393141 [ 24571 ] {} <Debug> DiskLocal: Reserving 1.00 MiB on disk `default`, having unreserved 41.85 GiB.
+2021.06.19 23:16:03.393525 [ 24573 ] {} <Debug> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390) (MergerMutator): Merging 6 parts: from 202106_1_8_2 to 202106_13_13_0 into Compact
+2021.06.19 23:16:03.394189 [ 24573 ] {} <Debug> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390) (MergerMutator): Selected MergeAlgorithm: Horizontal
+2021.06.19 23:16:03.396580 [ 24573 ] {} <Trace> MergeTreeSequentialSource: Reading 2 marks from part 202106_1_8_2, total 61 rows starting from the beginning of the part
+2021.06.19 23:16:03.399036 [ 24531 ] {} <Information> DatabaseAtomic (default): Total 0 tables and 0 dictionaries.
+2021.06.19 23:16:03.399110 [ 24531 ] {} <Information> DatabaseAtomic (default): Starting up tables.
+2021.06.19 23:16:03.399253 [ 24531 ] {} <Information> DatabaseCatalog: Found 0 partially dropped tables. Will load them and retry removal.
+2021.06.19 23:16:03.399331 [ 24531 ] {} <Debug> Application: Loaded metadata.
+2021.06.19 23:16:03.399464 [ 24531 ] {} <Trace> Pipe: Pipe capacity is 1.00 MiB
+2021.06.19 23:16:03.400091 [ 24531 ] {} <Information> Application: Listening for http://[::]:8123
+2021.06.19 23:16:03.400269 [ 24531 ] {} <Information> Application: Listening for connections with native protocol (tcp): [::]:9000
+2021.06.19 23:16:03.400440 [ 24531 ] {} <Information> Application: Listening for replica communication (interserver): http://[::]:9009
+2021.06.19 23:16:03.400718 [ 24573 ] {} <Trace> MergeTreeSequentialSource: Reading 2 marks from part 202106_9_9_0, total 8 rows starting from the beginning of the part
+2021.06.19 23:16:03.402594 [ 24531 ] {} <Information> Application: Listening for MySQL compatibility protocol: [::]:9004
+2021.06.19 23:16:03.402737 [ 24531 ] {} <Debug> AsynchronousMetrics: MemoryTracking: was 37.75 KiB, peak 56.50 KiB, will set to 283.19 MiB (RSS), difference: 283.15 MiB
+2021.06.19 23:16:03.404230 [ 24573 ] {} <Trace> MergeTreeSequentialSource: Reading 2 marks from part 202106_10_10_0, total 8 rows starting from the beginning of the part
+2021.06.19 23:16:03.404714 [ 24531 ] {} <Information> DNSCacheUpdater: Update period 15 seconds
+2021.06.19 23:16:03.404808 [ 24531 ] {} <Information> Application: Available RAM: 31.42 GiB; physical cores: 20; logical cores: 20.
+2021.06.19 23:16:03.404914 [ 24548 ] {} <Debug> DNSResolver: Updating DNS cache
+2021.06.19 23:16:03.405550 [ 24548 ] {} <Debug> DNSResolver: Updated DNS cache
+2021.06.19 23:16:03.405680 [ 24531 ] {} <Information> Application: Ready for connections.
+2021.06.19 23:16:03.407785 [ 24573 ] {} <Trace> MergeTreeSequentialSource: Reading 2 marks from part 202106_11_11_0, total 7 rows starting from the beginning of the part
+2021.06.19 23:16:03.411276 [ 24573 ] {} <Trace> MergeTreeSequentialSource: Reading 2 marks from part 202106_12_12_0, total 8 rows starting from the beginning of the part
+2021.06.19 23:16:03.414600 [ 24573 ] {} <Trace> MergeTreeSequentialSource: Reading 2 marks from part 202106_13_13_0, total 1 rows starting from the beginning of the part
+2021.06.19 23:16:03.441728 [ 24573 ] {} <Debug> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390) (MergerMutator): Merge sorted 93 rows, containing 268 columns (268 merged, 0 gathered) in 0.04824075 sec., 1927.830724024813 rows/sec., 3.92 MiB/sec.
+2021.06.19 23:16:03.445356 [ 24573 ] {} <Trace> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Renaming temporary part tmp_merge_202106_1_13_3 to 202106_1_13_3.
+2021.06.19 23:16:03.446057 [ 24573 ] {} <Trace> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390) (MergerMutator): Merged 6 parts: from 202106_1_8_2 to 202106_13_13_0
+2021.06.19 23:16:03.446183 [ 24573 ] {} <Debug> MemoryTracker: Peak memory usage: 4.02 MiB.
+2021.06.19 23:16:10.895381 [ 24568 ] {} <Trace> SystemLog (system.trace_log): Flushing system log, 1 entries to flush
+2021.06.19 23:16:10.895365 [ 24550 ] {} <Trace> SystemLog (system.metric_log): Flushing system log, 8 entries to flush
+2021.06.19 23:16:10.896453 [ 24568 ] {} <Debug> SystemLog (system.trace_log): Will use existing table system.trace_log for TraceLog
+2021.06.19 23:16:10.897458 [ 24550 ] {} <Debug> SystemLog (system.metric_log): Will use existing table system.metric_log for MetricLog
+2021.06.19 23:16:10.898627 [ 24568 ] {} <Debug> DiskLocal: Reserving 1.00 MiB on disk `default`, having unreserved 41.85 GiB.
+2021.06.19 23:16:10.901631 [ 24568 ] {} <Trace> system.trace_log (ddcd3e26-fda8-48c8-b752-31459b818be4): Renaming temporary part tmp_insert_202106_1_1_0 to 202106_6_6_0.
+2021.06.19 23:16:10.902267 [ 24568 ] {} <Trace> SystemLog (system.trace_log): Flushed system log
+2021.06.19 23:16:10.907236 [ 24550 ] {} <Debug> DiskLocal: Reserving 1.00 MiB on disk `default`, having unreserved 41.85 GiB.
+2021.06.19 23:16:10.915025 [ 24550 ] {} <Trace> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Renaming temporary part tmp_insert_202106_1_1_0 to 202106_14_14_0.
+2021.06.19 23:16:10.916485 [ 24550 ] {} <Trace> SystemLog (system.metric_log): Flushed system log
+2021.06.19 23:16:18.405851 [ 24569 ] {} <Debug> DNSResolver: Updating DNS cache
+2021.06.19 23:16:18.407422 [ 24569 ] {} <Debug> DNSResolver: Updated DNS cache
+2021.06.19 23:16:18.416862 [ 24550 ] {} <Trace> SystemLog (system.metric_log): Flushing system log, 8 entries to flush
+2021.06.19 23:16:18.427337 [ 24550 ] {} <Debug> DiskLocal: Reserving 1.00 MiB on disk `default`, having unreserved 41.85 GiB.
+2021.06.19 23:16:18.435657 [ 24550 ] {} <Trace> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Renaming temporary part tmp_insert_202106_2_2_0 to 202106_15_15_0.
+2021.06.19 23:16:18.437192 [ 24550 ] {} <Trace> SystemLog (system.metric_log): Flushed system log
+2021.06.19 23:16:25.937615 [ 24550 ] {} <Trace> SystemLog (system.metric_log): Flushing system log, 7 entries to flush
+2021.06.19 23:16:25.948208 [ 24550 ] {} <Debug> DiskLocal: Reserving 1.00 MiB on disk `default`, having unreserved 41.85 GiB.
+2021.06.19 23:16:25.956736 [ 24550 ] {} <Trace> system.metric_log (c635b17e-f194-4f2f-a8ae-b64a25941390): Renaming temporary part tmp_insert_202106_3_3_0 to 202106_16_16_0.
+2021.06.19 23:16:25.958374 [ 24550 ] {} <Trace> SystemLog (system.metric_log): Flushed system log
+2021.06.19 23:16:30.000265 [ 24554 ] {} <Debug> AsynchronousMetrics: MemoryTracking: was 283.32 MiB, peak 287.32 MiB, will set to 293.56 MiB (RSS), difference: 10.24 MiB
+2021.06.19 23:16:32.235411 [ 24534 ] {} <Trace> HTTPHandler-factory: HTTP Request for HTTPHandler-factory. Method: POST, Address: [::ffff:10.99.108.163]:5653, User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.5), Length: 55, Content Type: text/plain; charset=UTF-8, Transfer Encoding: identity, X-Forwarded-For: (none)
+2021.06.19 23:16:32.236355 [ 24534 ] {} <Trace> DynamicQueryHandler: Request URI: /?extremes=0&database=default&compress=1&query_id=ed296dee-08f1-48e0-8a2e-34d892f68554
+2021.06.19 23:16:32.241900 [ 24534 ] {} <Error> Access(user directories): default: Authentication failed: Code: 193, e.displayText() = DB::Exception: Invalid password, Stack trace (when copying this message, always include the lines below):
+
+0. /home/ClickHouse-21.3.12.2-lts/contrib/libcxx/include/exception:133: Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xd3c40 in /opt/clickhouse/lib/lib_poco_foundation.so
+1. /home/ClickHouse-21.3.12.2-lts/src/Common/Exception.cpp:56: DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int, bool) @ 0x9fe38 in /opt/clickhouse/lib/libclickhouse_common_io.so
+2. /home/ClickHouse-21.3.12.2-lts/src/Access/IAccessStorage.cpp:583: DB::IAccessStorage::throwInvalidPassword() @ 0x14794c in /opt/clickhouse/lib/libclickhouse_access.so
+3. /home/ClickHouse-21.3.12.2-lts/src/Access/IAccessStorage.cpp:455: DB::IAccessStorage::loginImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, Poco::Net::IPAddress const&, DB::ExternalAuthenticators const&) const @ 0x1478d8 in /opt/clickhouse/lib/libclickhouse_access.so
+4. /home/ClickHouse-21.3.12.2-lts/src/Access/IAccessStorage.cpp:428: DB::IAccessStorage::login(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, Poco::Net::IPAddress const&, DB::ExternalAuthenticators const&, bool) const @ 0x147490 in /opt/clickhouse/lib/libclickhouse_access.so
+5. /home/ClickHouse-21.3.12.2-lts/src/Access/MultipleAccessStorage.cpp:413: DB::MultipleAccessStorage::loginImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, Poco::Net::IPAddress const&, DB::ExternalAuthenticators const&) const @ 0x15d4fc in /opt/clickhouse/lib/libclickhouse_access.so
+6. /home/ClickHouse-21.3.12.2-lts/src/Access/IAccessStorage.cpp:428: DB::IAccessStorage::login(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, Poco::Net::IPAddress const&, DB::ExternalAuthenticators const&, bool) const @ 0x147490 in /opt/clickhouse/lib/libclickhouse_access.so
+7. /home/ClickHouse-21.3.12.2-lts/src/Interpreters/Context.cpp:702: DB::Context::setUserImpl(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::optional<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > const&, Poco::Net::SocketAddress const&) @ 0x64de50 in /opt/clickhouse/lib/libclickhouse_interpreters.so
+8. /home/ClickHouse-21.3.12.2-lts/contrib/libcxx/include/optional:225: DB::Context::setUser(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, Poco::Net::SocketAddress const&) @ 0x64e20c in /opt/clickhouse/lib/libclickhouse_interpreters.so
+9. /home/ClickHouse-21.3.12.2-lts/contrib/libcxx/include/string:1444: DB::HTTPHandler::processQuery(DB::Context&, DB::HTTPServerRequest&, DB::HTMLForm&, DB::HTTPServerResponse&, DB::HTTPHandler::Output&, std::__1::optional<DB::CurrentThread::QueryScope>&) @ 0x959ac in /opt/clickhouse/lib/libclickhouse_server.so
+ (version 21.3.12.1)
+2021.06.19 23:16:32.242640 [ 24533 ] {} <Trace> BaseDaemon: Received signal 6
+2021.06.19 23:16:32.243341 [ 24602 ] {} <Fatal> BaseDaemon: ########################################
+2021.06.19 23:16:32.243752 [ 24602 ] {} <Fatal> BaseDaemon: (version 21.3.12.1, build id: 53D1CF9A5C450F761753D9903CB6DC16E1F08D32) (from thread 24534) (no query) Received signal Aborted (6)
+2021.06.19 23:16:32.243935 [ 24602 ] {} <Fatal> BaseDaemon:
+2021.06.19 23:16:32.244101 [ 24602 ] {} <Fatal> BaseDaemon: Stack trace: 0xffffa12c5238
+2021.06.19 23:16:32.244311 [ 24602 ] {} <Fatal> BaseDaemon: 0. gsignal @ 0x35238 in /usr/lib64/libc-2.17.so
+2021.06.19 23:16:32.245396 [ 24602 ] {} <Fatal> BaseDaemon: Calculated checksum of the binary: F2998244624BDE65375BBC4AB67C5A87. There is no information about the reference checksum.
+2021.06.19 23:16:32.398588 [ 24566 ] {} <Trace> SystemLog (system.crash_log): Flushing system log, 1 entries to flush
+2021.06.19 23:16:32.399063 [ 24566 ] {} <Debug> SystemLog (system.crash_log): Will use existing table system.crash_log for CrashLog
+2021.06.19 23:16:33.402830 [ 24568 ] {} <Trace> SystemLog (system.trace_log): Flushing system log, 1 entries to flush
+2021.06.19 23:16:33.407678 [ 24548 ] {} <Debug> DNSResolver: Updating DNS cache
+2021.06.19 23:16:33.408225 [ 24548 ] {} <Debug> DNSResolver: Updated DNS cache
+2021.06.19 23:16:33.458743 [ 24550 ] {} <Trace> SystemLog (system.metric_log): Flushing system log, 8 entries to flush
+2021.06.19 23:16:48.408427 [ 24553 ] {} <Debug> DNSResolver: Updating DNS cache
+2021.06.19 23:16:48.409077 [ 24553 ] {} <Debug> DNSResolver: Updated DNS cache
+Aborted (core dumped)
+[root@centos230 config]#
